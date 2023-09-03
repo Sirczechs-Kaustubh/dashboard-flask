@@ -1,0 +1,61 @@
+{% from "render_form_fields.html" import render_field %}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<style>
+    .card-img-top{
+        height: 250px;
+    }
+</style>
+<body>
+{% block content %}
+
+<div class="container">
+            
+     
+    <div class="row justify-content-center align-items-center" style="height:100vh">
+
+            <div class="card">
+                <div class="card-body">
+                    
+                    <img class="card-img-top" src="{{url_for('static', filename='logo12.png')}}">
+                    
+                    <h5 class="card-title">Sign Up</h5>
+                    
+                    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    
+            <p class="card-text bg-danger pl-3 text-sm text-light"> {{ messages[0] }}</p>
+    
+    {% endif %}
+    {% endwith %}
+
+                    
+                    <form action="/signup" method="POST" autocomplete="off">
+                        {{ form.csrf_token }}
+                       
+                            {{ render_field(form.username,placeholder=form.username.label.text) }}
+                            {{ render_field(form.password,placeholder=form.password.label.text) }}
+                            {{ render_field(form.first_name,placeholder=form.first_name.label.text) }}
+                            {{ render_field(form.last_name,placeholder=form.last_name.label.text) }}
+                            {{ render_field(form.email,placeholder=form.email.label.text) }}
+                            <div><span>Active:
+                            {{ render_field(form.active,placeholder=form.active.label.text) }}
+                           	</span></div>
+                       
+                        <button type="submit" class="btn btn-primary">sign up</button>
+                    </form>
+                </div>
+            </div>
+        
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

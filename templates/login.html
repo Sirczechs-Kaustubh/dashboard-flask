@@ -1,0 +1,53 @@
+{% from "render_form_fields.html" import render_field %}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+{% block content %}
+
+<div class="container">
+            
+     
+    <div class="row justify-content-center align-items-center" style="height:100vh">
+
+            <div class="card">
+                <div class="card-body">
+                    
+                    <img class="card-img-top" src="{{url_for('static', filename='your_logo.png')}}">
+                    
+                    <h5 class="card-title">Login</h5>
+                    
+                    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    
+            <p class="card-text bg-danger pl-3 text-sm text-light"> {{ messages[0] }}</p>
+    
+    {% endif %}
+    {% endwith %}
+
+                    
+                    <form action="/login" method="POST" autocomplete="off">
+                        {{ form.csrf_token }}
+                       
+                            {{ render_field(form.username,placeholder=form.username.label.text) }}
+                            {{ render_field(form.password,placeholder=form.password.label.text) }}
+                       
+                        <div class="checkbox">
+                            {{ form.remember }} Remember Me
+                          </div>
+                        <button type="submit" class="btn btn-primary">login</button>
+                    </form>
+                </div>
+            </div>
+        
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

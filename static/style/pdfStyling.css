@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin:0;
+    min-height: 100vh;
+    border: 1px solid black;
+ 
+}
+
+.generatePdfButton {
+    width: fit-content;
+    margin: auto;
+    padding: 10px 20px;
+    margin-top: 50px;
+    outline: none;
+    border: none;
+    background-color: rgb(0, 202, 0);
+    color:white;
+    border-radius: 5px;
+    transition: all 0.15s  ease-in-out;
+}
+.generatePdfButton:hover{
+    transform: scale(1.05);
+    background-color: rgb(0, 171, 0);
+}
+.pdfBody {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    display: block;
+    position: relative;
+    border: 1px solid black;
+}
+
+.pdfBody .headerBody {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pdfBody .headerBody img {
+    width: 250px;
+}
+
+.pdfBody .userInformation {
+	background: linear-gradient(white,lightblue);
+	align-items: center;
+    position: relative;
+    margin-top: 0px;
+    display: grid;
+    grid-template-columns: 0.75fr 1fr 1fr 0.75fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 3px;
+    grid-row-gap: 0px;
+    border:2px solid black;
+    padding:5px 15px;
+}
+.pdfBody .userInformation p{
+    font-size: 15px;
+}
+.pdfBody .testResults{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+.pdfBody .testResults h5{
+    font-weight: bolder;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.pdfBody .remarksBody{
+    width: 100%;
+    margin-top:10px;
+    position: relative;
+}
+.pdfBody .remarksBody h6{
+    font-weight: bolder;
+}
+.pdfBody .remarksBody p {
+    width: 100%;
+    text-align: justify;
+    text-indent: 50px;
+}
+
+.testResults .table-bordered  {
+	border:2px solid black;
+}
+.tableTitle{
+	border: 2px solid black;
+	padding: 5px 15px;
+    display: block;
+    margin: 0 auto;
+}
+.reportBody{
+	text-align: center;
+    width: 300px;
+  	padding: 5px 15px;
+ 	border:2px solid black;
+  	margin: auto;
+  	background: linear-gradient(white,lightblue);
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+.signText{
+	margin-left: -77.5%;
+	text-align: center;
+	align-items: left;
+	padding: 5px 15px;
+}
+th{
+	border-bottom: 2px solid black;
+}
+caption{
+	font-weight: bolder;
+	justify-content: center;
+    border:2px solid black;
+    text-align: center;
+
+}
+footer{
+    position: relative;
+    bottom:5px;
+    width: 100%;
+    text-align: center;
+    color:#303030;
+}
