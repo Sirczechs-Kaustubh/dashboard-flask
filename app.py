@@ -35,8 +35,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'kaustubhanand'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sample.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://admin:Petbiotech12@pbt-portal.czufb7vlwyub.ap-south-1.rds.amazonaws.com/ebdb'
-#app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+mysqlconnector://muybuem7m3toszwu1k5g:pscale_pw_GQuR6J7xojCVsBlnCyxewcJRKkUeeEm6UlNvc1gUQrW@aws.connect.psdb.cloud:3306/pbt-portal?ssl_ca=/etc/ssl/cert.pem"
+#app.config['SQLALCHEMY_DATABASE_URI'] = ''
+#app.config['SQLALCHEMY_DATABASE_URI'] = ""
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #app.config['SQLALCHEMY_ECHO'] = True
 app.config['SQLALCHEMY_POOL_SIZE'] = 10
